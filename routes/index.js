@@ -4,7 +4,7 @@ const config = require('../public/config/microapp.config.json');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { path: 'Gaurav',type:'page', userInfo: req.userContext.userinfo, config: JSON.stringify(config) });
+  res.render('index', { path: 'payment-app',type:'microapp', userInfo: req.userContext.userinfo, config: JSON.stringify(config) });
 });
 router.get('/payment', function (req, res, next) {
   res.render('index', { path: 'payment-app',type:'microapp', userInfo: req.userContext.userinfo,config: JSON.stringify(config) });
