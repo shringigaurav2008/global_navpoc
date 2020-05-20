@@ -2,24 +2,23 @@
 <div class="container">
     <div class="row">
         <div class="col-12 mt-4 mb-4" id="container">
-                    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
-            <h3 class="text-capitalize">Customer profile</h3>
-            <div class="form-control-input">
-                <input formControlName="customerName" placeholder="Customer name" class="text-capitalize">
-            </div>
-            <div class="form-control-input" <input formControlName="customerEmail" placeholder="Customer email">
-            </div>
-            <div class="form-control-input">
-                <input formControlName="customerBan" placeholder="Customer Ban" maxlength="10">
-            </div>
-            <div class="form-control-input">
-                <input formControlName="customerAddress" placeholder="Address" class="text-capitalize">
-            </div>
-            <button type="submit" [disabled]="myForm.invalid">
-                Send
-            </button>
-        </form>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+                <h3 class="text-capitalize">Customer profile</h3>
+                <div class="form-control-input">
+                    <input formControlName="customerName" placeholder="Customer name" class="text-capitalize">
+                </div>
+                <div class="form-control-input" <input formControlName="customerEmail" placeholder="Customer email">
+                </div>
+                <div class="form-control-input">
+                    <input formControlName="customerBan" placeholder="Customer Ban" maxlength="10">
+                </div>
+                <div class="form-control-input">
+                    <input formControlName="customerAddress" placeholder="Address" class="text-capitalize">
+                </div>
+                <button type="submit" [disabled]="myForm.invalid">
+                    Send
+                </button>
+            </form>
         </div>
-        
     </div>
 </div>

@@ -5,9 +5,9 @@
   <link rel="stylesheet" href="https://d3q2ine3jgeko0.cloudfront.net/client/styles.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300;1,400&display=swap"
     rel="stylesheet">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
   <title> Global Nav</title>
 </head>
 
@@ -16,20 +16,51 @@
   {{> header }}
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12" >
-        <div class="mt-1 small text-right">User Name : {{userInfo.name}} User Email : {{userInfo.preferred_username}}  User Location:{{userInfo.zoneinfo}}</div>
+      <div class="col-12">
+        <div class="mt-1 small text-right">User Name : {{userInfo.name}} User Email : {{userInfo.preferred_username}}
+          User Location:{{userInfo.zoneinfo}}</div>
       </div>
-
     </div>
   </div>
-
-  {{{body}}}
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mt-4 mb-4" id="container">
+        <div id="page-container" class="hide">
+          <form>
+            <h3 class="text-capitalize">Customer profile</h3>
+            <div class="form-control-input">
+              <input name="customerName" placeholder="Customer name" class="text-capitalize"
+                onchange="handleUserInput(this)">
+            </div>
+            <div class="form-control-input">
+              <input name="customerEmail" placeholder="Customer email" onchange="handleUserInput(this)">
+            </div>
+            <div class="form-control-input">
+              <input name="customerBan" placeholder="Customer Ban" maxlength="10" onchange="handleUserInput(this)">
+            </div>
+            <div class="form-control-input">
+              <input name="customerAddress" placeholder="Address" class="text-capitalize"
+                onchange="handleUserInput(this)">
+            </div>
+            <button type="button">
+              Send
+            </button>
+          </form>
+        </div>
+        <div id="micro-container" class="hide">
+        </div>
+      </div>
+    </div>
+  </div>
   {{> footer }}
   <div id="config" class="d-none" data-config="{{config}}"></div>
-
   <script src="https://d3q2ine3jgeko0.cloudfront.net/client/unav.min.js"></script>
   <script src="/javascripts/script.js"></script>
-
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      pageDetail('{{path}}', '{{type}}');
+    });
+  </script>
 </body>
 
 </html>

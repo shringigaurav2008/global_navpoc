@@ -1,24 +1,24 @@
 [
     {
+        "path": "coverage-map",
+        "elementName": "iframe",
+        "source": "https://maps.t-mobile.com/pcc.html?map=tmo-tom",
+        "loaded": false
+    },
+    {
         "path": "react-app",
         "elementName": "web-app",
-        "source": "https://app-cart.herokuapp.com/static/js/bundle.min.js",
+        "source": "https://app-cart.herokuapp.com/build/react.js",
         "loaded": false
     },
     {
         "path": "payment-app",
         "elementName": "app-payment",
-        "source": "./payment/main.js",
+        "source": "https://app-cart.herokuapp.com/build/paymentelement.js",
         "loaded": false
     },
     {
-        "path": "tmo-digital-footer1",
-        "elementName": "tmo-digital-footer",
-        "source": "https://d3q2ine3jgeko0.cloudfront.net/client/unav.min.js",
-        "loaded": false
-    },
-    {
-        "path": "tmo-digital-footer1",
+        "path": "tmo-digital-footer",
         "elementName": "tmo-digital-footer",
         "source": "https://d3q2ine3jgeko0.cloudfront.net/client/unav.min.js",
         "loaded": false

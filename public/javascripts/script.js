@@ -8,6 +8,31 @@ function setWindowObject(key, value) {
 const config = document.querySelector('#config').dataset.config;
 const MICRO_APP_OBJECT = JSON.parse(config);
 
+function onClickMenu(event){
+    const type = event.target.getAttribute("data-type");
+    const path = event.target.getAttribute("data-app");
+    pageDetail(path,type);
+}
+
+function pageDetail(path,type) {
+    document.getElementById("micro-container").classList.remove("iframeheight");
+    document.getElementById("page-container").classList.add("hide");
+    document.getElementById("micro-container").classList.add("hide");
+    if(type === "page"){
+        document.getElementById("page-container").classList.remove("hide");
+    }
+    else if(type === "microapp"){
+        document.getElementById("micro-container").classList.remove("hide");
+        loadMicroApp(path);
+    }
+    else{
+        document.getElementById("micro-container").classList.add("iframeheight");
+        document.getElementById("micro-container").classList.remove("hide");
+        const microApp = MICRO_APP_OBJECT.find(microapp => microapp.path === path);
+        document.getElementById("micro-container").innerHTML = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="'+microApp.source+'" id="iFrameLoad" allowfullscreen></iframe>';
+    }
+}
+
 function loadExternalMicroApp(microApp) {
     return new Promise((resolve, reject) => {
         // resolve if already loaded
@@ -42,27 +67,32 @@ function loadExternalMicroApp(microApp) {
     });
 }
 
-function loadMicroApp(event) {
-
-    console.log(event)
-
-    const microApp = MICRO_APP_OBJECT.find(microapp => microapp.path === event.target.getAttribute("data-app"));
-    if(!microApp){
-        window.location.href ="/iframe"
-    }
+function loadMicroApp(path) {
+    document.getElementById('micro-container').innerHTML = "";
+    const microApp = MICRO_APP_OBJECT.find(microapp => microapp.path === path);
     loadExternalMicroApp(microApp).then(res => {
         loadElement(microApp);
     });
 }
 
 function loadElement(microApp) {
-    document.getElementById('container').innerHTML = "";
     const element = document.createElement(microApp.elementName);
-    document.getElementById('container').append(element);
+    document.getElementById('micro-container').append(element);
 }
+
 function logOut(){
-window.location.href= `${window.location.origin}/logout`;
+    window.location.href= `${window.location.origin}/logout`;
 }
+
+function handleUserInput(event) {
+    const name = event.name;
+    const value = event.value;
+    const updatedControls = { ...window.customer };
+    updatedControls[name] = value;
+    window.customer = updatedControls;
+}
+
+
 window.customer= {
     customerName: 'satnam',
     customerEmail: 'test@gmail.com',
