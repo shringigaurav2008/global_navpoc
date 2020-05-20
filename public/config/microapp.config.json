@@ -1,0 +1,26 @@
+[
+    {
+        "path": "react-app",
+        "elementName": "web-app",
+        "source": "https://app-cart.herokuapp.com/static/js/bundle.min.js",
+        "loaded": false
+    },
+    {
+        "path": "payment-app",
+        "elementName": "app-payment",
+        "source": "./payment/main.js",
+        "loaded": false
+    },
+    {
+        "path": "tmo-digital-footer1",
+        "elementName": "tmo-digital-footer",
+        "source": "https://d3q2ine3jgeko0.cloudfront.net/client/unav.min.js",
+        "loaded": false
+    },
+    {
+        "path": "tmo-digital-footer1",
+        "elementName": "tmo-digital-footer",
+        "source": "https://d3q2ine3jgeko0.cloudfront.net/client/unav.min.js",
+        "loaded": false
+    }
+]

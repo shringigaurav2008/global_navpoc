@@ -1,0 +1,53 @@
+
+a {
+  color: rgb(255, 22, 142);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+input{
+  width: 400px;
+  display: block;
+  padding: 10px;
+font-size: 16px;
+  border: 1px solid #868686;
+  font-family: Tele-GroteskHal, sans-serif;
+}
+*{
+  font-size: 16px;
+  font-family: Tele-GroteskHal, sans-serif;
+}
+h4{
+  font-size:24px;
+  margin-bottom:20px;
+}
+.text-capitalize
+{
+  text-transform: capitalize;
+}
+button{
+  background-color: #e20074;
+  color: #fff;
+  font-family: Tele-GroteskHal, sans-serif;
+
+  padding: 10px 30px;
+}
+button:disabled{
+  background-color: #ccc;
+   color: #4c4c4c;
+   font-family: Tele-GroteskHal, sans-serif;
+
+}
+.form-control-input{
+  margin-bottom: 10px;
+}
+.form-control-input > div{
+  font-size: 14px;
+  color:#ff0000;
+
+  font-family: Tele-GroteskHal, sans-serif;
+
+}
+
+

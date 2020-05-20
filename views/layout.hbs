@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+  <!-- <meta> tags> -->
+  <link rel="stylesheet" href="https://d3q2ine3jgeko0.cloudfront.net/client/styles.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title> Global Nav</title>
+</head>
+
+<body>
+
+  {{> header }}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12" >
+        <div class="mt-1 small text-right">User Name : {{userInfo.name}} User Email : {{userInfo.preferred_username}}  User Location:{{userInfo.zoneinfo}}</div>
+      </div>
+
+    </div>
+  </div>
+
+  {{{body}}}
+  {{> footer }}
+  <div id="config" class="d-none" data-config="{{config}}"></div>
+
+  <script src="https://d3q2ine3jgeko0.cloudfront.net/client/unav.min.js"></script>
+  <script src="/javascripts/script.js"></script>
+
+</body>
+
+</html>
